@@ -7,4 +7,4 @@ void u(List<List<Long>>s,int x,int y,int p,int q){List<Long>t=f(s,x,y);List<Long
 List<Long>f(List<List<Long>>s,int x,int y){try{return s.stream().filter(t->t.contains(c(x,y))).findFirst().get();}catch(Exception e){return null;}}
 long c(long x,long y){return y*12+x;}
 List<List<Long>>a(InputStream s)throws Exception{List<List<Long>>splashes=new ArrayList<>();for(int i=0;i<144;i++){long y=i/12;long x=i%12;int b=0;while(b<79)b=s.read();if(b==88)splashes.add(new ArrayList<>(Arrays.asList(c(x,y))));}return splashes;}
-String d(List<Long>s){return String.format("%d => %s",s.size(),s.stream().map(n->"("+n%12+","+n/12+")").reduce((t,u)->t+", "+u).get());}}
+String d(List<Long>s){return s.size()+" => "+s.stream().map(n->"("+n%12+","+n/12+")").reduce((t,u)->t+", "+u).get();}}
