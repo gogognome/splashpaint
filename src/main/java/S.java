@@ -3,24 +3,7 @@ import java.util.*;
  
 public class S {public static void main(String[] a) throws Throwable{System.out.println(d(c(b(a(System.in)))));}
 static List<Integer> c(List<List<Integer>> s) {Collections.sort(s,(t,u)->t.get(0)-u.get(0));Collections.sort(s,(t,u)->t.size()-u.size());return s.get(0);}
-
-	static List<List<Integer>> b(List<List<Integer>> splashes) {
-		for (int i=0; i<144; i++) {
-			int y = i/12; int x = i%12;
-			if (findSplash(splashes, x, y) != null) {
-				for (int dx=x==0?0:-1; dx<=(x==11?0:1);dx++) {
-					for (int dy=y==0?0:-1; dy<=(y==11?0:1);dy++) {
-						if (dx != 0 || dy != 0) {
-							if (findSplash(splashes, x+dx, y+dy) != null) {
-								unite(splashes, x, y, x+dx, y + dy);
-							}
-						}
-					}
-				}
-			}
-		}
-		return splashes;
-	}
+	static List<List<Integer>> b(List<List<Integer>> s) {for(int i=0;i<144;i++){int y=i/12;int x=i%12;if(findSplash(s,x,y)!=null){for(int dx=x==0?0:-1;dx<=(x==11?0:1);dx++){for(int dy=y==0?0:-1;dy<=(y==11?0:1);dy++){if (dx!=0||dy!=0){if(findSplash(s,x+dx,y+dy)!=null){unite(s,x,y,x+dx,y+dy);}}}}}}return s;}
 
 	static void unite(List<List<Integer>> splashes, int x, int y, int p, int q) {
 		List<Integer> splash1 = findSplash(splashes, x, y);
