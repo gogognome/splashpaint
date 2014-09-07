@@ -10,6 +10,7 @@ import java.util.List;
 public class SplashPaint {
 
 	public static void main(String[] args) throws IOException {
+		System.out.println("WARNING: " + SplashPaint.class.getName());
 		boolean[][] paint = parseInput(System.in);
 		List<List<Integer>> splashes = findSplashes(paint);
 		System.out.println(formatSplash(findFirstSmallestSplash(splashes)));
