@@ -30,7 +30,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>nl.gogognome.splashpaint.SplashPaint</mainClass>
+							<mainClass>S</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
